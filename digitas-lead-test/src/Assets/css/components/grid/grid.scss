@@ -5,3 +5,12 @@ table{
           }
      }
 }
+.rdt_Table{     
+     .rdt_TableHead{
+          font-weight: bold;
+     }
+     :is(.rdt_TableHead, .rdt_TableCell){
+          font-size: 16px;
+          padding: 5px 0;
+     }
+}

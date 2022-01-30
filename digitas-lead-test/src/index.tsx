@@ -5,6 +5,7 @@ import Footer from './Layouts/Footer/Footer';
 import Header from './Layouts/Header/Header';
 import Main from './Pages/Main';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
   <React.StrictMode>

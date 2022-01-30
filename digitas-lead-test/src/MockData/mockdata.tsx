@@ -4,8 +4,9 @@ export const columns = [
           name: 'Name',
           selector: (row: { name: any; }) => row.name,
           cell: (row: any) => (
-               <div id={"name"+row.name.split(' ')[0]} onMouseOver={(e) => handleMouseIn(e, "name"+row.name.split(' ')[0])} onMouseOut={() => handleMouseOut()}>
-               {row.name}
+               <div id={"name"+row.name.split(' ')[0]} onMouseEnter={(e) => handleMouseIn(e, "name"+row.name.split(' ')[0])} onMouseOut={(e) => handleMouseOut(e, "btnName"+row.name.split(' ')[0])}>
+                    <div>{row.name}</div>
+                    <button id={"btnName"+row.name.split(' ')[0]} type="button" style={{display: 'none'}}>Press Me</button>
                </div>
           )
      },
@@ -67,22 +68,22 @@ export const lessons = [
           "image": "https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_960_720.png"
      }
 ];
-const handleMouseIn = (evt: any, id: any) => {
+const handleMouseIn = (evt: any, btnid: any) => {
      evt.preventDefault();
      var button = document.createElement('button');
      button.type = 'button';
+     button.id = btnid;
      button.innerHTML = 'Press me';
+     button.className = 'btn btn-info btn-lg';
      button.onclick = function() {
-        alert('abc');
+          alert('abc');
      };
-     console.log(id);
-     window.document.getElementById(id)?.appendChild(button);
-     // if (container === null) {
-     //      container.appendChild(button);
-     // } else {
-          
-     // }
+     document.getElementById(btnid)?.appendChild(button);
 };
-const handleMouseOut = () => {
-     //alert(val);
+const handleMouseOut = (evt: any, btnid: any) => {
+     evt.stopPropagation();
+     console.log(btnid);
+     //window.document.getElementById(id).style.display = "none";
+     // var elem = window.document.getElementById("nameBtn"+id);
+     // elem?.parentNode?.removeChild(elem);
 };
