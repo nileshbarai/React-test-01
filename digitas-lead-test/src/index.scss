@@ -1,14 +1,81 @@
-body {
+// body {
+//   margin: 0;
+//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+//     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+//     sans-serif;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+//     monospace;
+// }
+@import './Assets/css/components/variables/variables.scss', './Assets/css/components/colors/colors.scss', './Assets/css/components/grid/grid.scss', './Assets/css/app-components/header.scss', './Assets/css/app-components/search-bar.scss', './Assets/css/app-components/footer.scss';
+@mixin wrapContainer{
+  body{
+      background: $white;
+      color: $black;
+      font: normal 16px/18px Arial;
+      .wrap-container{
+          width: 100%;
+          margin: 0 auto;
+      }
+      header,
+      main,
+      footer{
+          padding: $wrapSM $wrapLG;
+      }
+  }
+}
+// Reset padding margin
+@mixin reset-pad-mar{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*, ::after, ::before{
+  transition: 0.3s ease-in-out;
+  box-sizing: border-box;
 }
-@import './Assets/css/components/colors/colors.scss', './Assets/css/app-components/header.scss', './Assets/css/app-components/footer.scss';
+/* Custom scroll bar width */
+::-webkit-scrollbar{
+  width: $spcSM;
+}
+/* Custom scroll bar track */
+::-webkit-scrollbar-track{
+  background: #ccc;
+}
+/* Custom scroll bar thumb/handle */
+::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: #{space-xs/2};
+  &:hover{
+      background: #ccc;
+  }
+}
+html{
+  min-height: 100%;
+  body{
+      width: 100%;
+      min-height: 100%;
+      margin: 0 auto;
+      padding: 0;
+  }
+}
+h1, h2, h3, h4, h5, h6, p, ul, ol, label{
+  @include reset-pad-mar();
+  line-height: normal;
+}
+ul,
+ol{
+  li{
+      list-style: none;
+      @include reset-pad-mar();
+      display: inline-flex;
+  }
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section{
+  display: block;
+}
+@include wrapContainer();

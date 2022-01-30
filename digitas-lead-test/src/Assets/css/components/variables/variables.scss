@@ -1,0 +1,48 @@
+// Convert px to em
+@function toRem($value) {
+    @return ($value / 16) + rem;
+}
+
+// Default Size
+$baseSize: 16px;
+$baseValue: toRem(16);
+
+// Page Wrap Space
+$wrapLG: toRem(30);
+$wrapMD: toRem(24);
+$wrapSM: toRem(16);
+
+// Gutter Page Space
+$gutterLG: toRem(24);
+$gutterSM: toRem(16);
+
+// Margin / Padding Space
+$spcXXL: toRem(50);
+$spcXL: toRem(30);
+$spcLG: toRem(24);
+$spcMD: toRem(16);
+$spcSM: toRem(12);
+$spcXS: toRem(8);
+
+//Border
+$borderXL: toRem(4);
+
+//Modal
+$modalLG: toRem(1077);
+$modalMD: toRem(855);
+$modalSM: toRem(400);
+
+//Button & Dropdown
+$btnXL: toRem(70);
+$btnLG: toRem(55);
+$btnMD: toRem(50);
+$btnSM: toRem(45);
+$btnXS: toRem(30);
+
+//Form Elements
+$inputLG: toRem(65);
+$inputMD: toRem(50);
+$inputSM: toRem(45);
+
+//System Font
+$systemFont: '"Arial Unicode MS", Arial, sans-serif';
