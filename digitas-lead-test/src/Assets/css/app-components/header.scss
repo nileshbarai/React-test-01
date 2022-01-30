@@ -1,0 +1,16 @@
+header{
+     background: $blue;
+     .top-row{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 50px;
+          > section{
+               display: flex;
+               flex-wrap: nowrap;
+          }
+     }
+     :is(p, a, div){
+          color: $white;
+     }
+}
